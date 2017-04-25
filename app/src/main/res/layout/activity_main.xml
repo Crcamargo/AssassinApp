@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.thunderfridge.phd.assassin.UI.MainActivity"
+    android:background="@drawable/background"
+    >
+
+
+
+    <TextView
+        android:text="Assassination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:id="@+id/textView3"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="53sp"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textColor="@android:color/black"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/buttonMore"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonPlay"
+        android:layout_alignStart="@+id/buttonPlay"
+        android:layout_below="@+id/buttonHow"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@android:color/background_dark"
+        android:text="About"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="25sp" />
+
+    <Button
+        android:text="Play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonPlay"
+        android:layout_marginTop="94dp"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:backgroundTint="@android:color/background_dark"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:textAllCaps="false"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="How to Play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:id="@+id/buttonHow"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:backgroundTint="@android:color/background_dark"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:textAllCaps="false"
+        android:layout_below="@+id/buttonPlay"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="-80hp"
+        android:id="@+id/eighty" />
+    <item android:title="-100hp"
+        android:id="@+id/hundred" />
+    <item android:title="-120hp"
+        android:id="@+id/onetwenty" />
+</menu>

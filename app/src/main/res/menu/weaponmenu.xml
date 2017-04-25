@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/tier1weapon" android:title="Tier 1"/>
+    <item android:id="@+id/tier2weapon" android:title="Tier 2"/>
+    <item android:id="@+id/tier3weapon" android:title="Tier 3"/>
+</menu>

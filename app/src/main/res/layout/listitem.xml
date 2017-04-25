@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/cont_item_root"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    >
+
+    <TextView
+        android:id="@+id/howTo_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Derp Derpsen"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:textStyle="normal|bold"
+        android:paddingBottom="8dp"
+        />
+    <TextView
+        android:id="@+id/howTo_Descrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:text="Hello, this is a text template for the description"
+        android:textColor="@android:color/black"
+        />
+
+
+</LinearLayout>

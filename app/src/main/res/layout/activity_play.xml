@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/damage_slider"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.thunderfridge.phd.assassin.UI.playActivity">
+
+    <TextView
+        android:id="@+id/Health"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="106dp"
+        android:text="1000"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="84sp" />
+
+    <TextView
+        android:id="@+id/AttackDamage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Health"
+        android:layout_alignBottom="@+id/Health"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:text="0"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="62sp" />
+
+    <TextView
+        android:id="@+id/Shield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Health"
+        android:layout_alignBottom="@+id/Health"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:text="0"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="62sp" />
+
+    <TextView
+        android:id="@+id/Count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/AttackDamage"
+        android:layout_alignBottom="@+id/AttackDamage"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="0"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/buttonAttack"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Health"
+        android:layout_alignLeft="@+id/Health"
+        android:layout_alignRight="@+id/Health"
+        android:layout_alignStart="@+id/Health"
+        android:layout_below="@+id/Health"
+        android:layout_marginTop="30dp"
+        android:text="Attack!"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/TakeDamage"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonAttack"
+        android:layout_alignStart="@+id/buttonAttack"
+        android:layout_below="@+id/buttonAttack"
+        android:layout_marginTop="27dp"
+        android:text="Take Damage"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="28sp" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TakeDamage"
+        android:layout_toLeftOf="@+id/TakeDamage"
+        android:layout_toStartOf="@+id/TakeDamage"
+        android:text="Direct"
+        android:textAlignment="center"
+        android:textColor="@android:color/black" />
+
+    <ImageButton
+        android:id="@+id/helpBut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/helpbutton"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <NumberPicker
+        android:id="@+id/numberPicker2"
+        android:layout_width="100dp"
+        android:layout_height="10dp"
+        android:layout_above="@+id/helpBut"
+        android:layout_below="@id/buttonAttack"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
+        android:gravity="center" />
+
+
+</RelativeLayout>

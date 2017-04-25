@@ -1,0 +1,188 @@
+<resources>
+    <string name="app_name">Assassin</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="healthTut">
+        This is your health. To heal, tap your health and choose how much you want to heal for.
+    </string>
+    <string name="armorTut">
+        This is your armor. To equip armor, tap your armor and choose which tier of armor you\'re equipping.
+    </string>
+    <string name="attackTut">
+        This is your weapon damage. When you equip a weapon, tap your weapon damage and choose which tier of
+        weapon you\'re equping. Next to your weapon damage there is a small counter that indicates how
+        many attacks you have let.
+    </string>
+    <string name="attackButtonTut">
+        Tap this button when you attack and your attack counter will go down.
+    </string>
+    <string name="takeDamageButTut">
+        When you\'ve been attacked, adjust the slider to the amount of damage you want to take.
+        Then tap this button to take the damage. If you want the damage to ignore armor, then toggle
+        the \'Direct\' switch and then apply damage.
+    </string>
+   <string name="healpTut">
+       Tap here if you want to run through this again
+   </string>
+
+    <string-array name="HowToTitleStrings">
+        <item>Set Up</item>
+        <item>Turns</item>
+        <item>Weapons and Armor</item>
+        <item>Ability (Red) Cards</item>
+        <item>Effect (Green) Cards</item>
+        <item>Enchantment (Purple) Cards</item>
+        <item>The Field</item>
+        <item>Deaths</item>
+        <item>How to Win</item>
+    </string-array>
+
+    <string-array name="HowToDescripStrings">
+        <item>
+            Shuffle role cards and distribute one to each player. You can never show your role card to
+            another player. Each player begins with 1000 Health Points (HP) \n\n
+
+            For 4 Players: Assassin, Queen, King, and Jack \n
+            For 5 Players: 2 Assassins. Queen, King, and Jack \n
+            For 6 Players: 3 Assassins. Queen, King, and Jack \n\n
+
+            Every Player begins with 5 cards and no one can attack with their weapon on their first turn
+        </item>
+        <item>
+            Draw one card at the start of each turn. A player can choose to play an ability card, replace
+            any weapons and armors, donate cards to any other player, or declare an attack. Attacking is done
+            last in a turn. No one can attack on their first turn. At the end of a player’s turn, they can be
+            holding no more than 7 cards. Any extra cards must be donated or discarded.
+        </item>
+        <item>
+            Only one weapon and one armor may be equipped at a time. A player’s weapon and armor can be
+            replaced at the end of any player’s turn, after they attack, or on their own turn. If a
+            weapon or armor is already equipped but the player wants to equip a new one, the player may
+            discard the weapon or armor and play another one from their hand. A weapon can only be used
+            to attack 3 times. If the attack is stopped, it does not count as an attack for the weapon.
+            Tier 1, 2, and 3 weapons deal 100, 200, and 300 damage respectively. Armor takes damage from
+            a weapon instead of it being taken from a player’s HP. Tier 1, 2, and 3 armors have 100, 200,
+            and 300 health. An armor’s health is different from a player’s HP. When an armor loses all of
+            its health, the armor is destroyed and the remaining damage is dealt to the player’s HP. For
+            example, if a tier 3 armor gets hit by a tier 1 weapon, then that armor takes the 100 damage
+            and now has 200 health left to protect the player. If a tier 3 weapon hits a tier 1 armor,
+            the armor is destroyed and the player takes 200 damage to their HP. If a weapon attacks a
+            player with equal tiers, then the armor is destroyed and no damage is taken.
+        </item>
+        <item>
+            Ability cards can only be played on the player’s turn. A player can only play one ability
+            card per turn unless specified otherwise.
+        </item>
+        <item>
+            Effect cards can be played on any turn, usually when a person is being attacked or targeted.
+        </item>
+        <item>
+            Purple cards are enchantments on weapons and armors. They can only be played on the
+            player’s turn. Multiple can be played in one turn and multiple can be applied to the
+            same weapon or armor. The enchantment card is discarded when the weapon or armor is
+            destroyed. If a card’s possession changes, the enchantments move with it.
+        </item>
+        <item>
+            The “field” encompasses all the cards on the table. There is a draw pile, a discard pile,
+            and each player’s own section of the field. In a player’s section, they should have their
+            role card face down and their HP visible if asked for. If a card is played that targets a
+            player, it is placed on their side of the field. For example, if Player A plays Bound on
+            Player B, it is kept on Player B’s field until the effect is over.
+        </item>
+        <item>
+            When a player dies, they discard their hand and cannot disclose any information on
+            their roles or any other players’. The dead player must look at every person’s role and
+            determine if the game is over or if they must continue playing. The player who does the
+            killing gains 200 HP (cannot go above 1000 HP) and draws 2 cards. If multiple players’
+            cards are responsible for the death, then no players collect the reward.
+        </item>
+        <item>
+            Assassin: The assassins win by killing the King, Queen, and Jack.\n\n
+            King: The King wins by surviving with the Queen. If the Queen dies, the King cannot win,
+            but may still be the last player to survive.\n\n
+            Queen: The Queen wins by surviving with the King or the Jack (only if the King is dead).\n\n
+            Jack: The Jack wins by surviving with the Queen, but must kill the King. If the Queen dies,
+            the Jack cannot win, but may be the last player to survive.\n\n
+            The game ends when there is only one person alive, only Assassins alive, or when the Queen
+            survives with the King or Jack.
+        </item>
+    </string-array>
+
+    <string-array name="setuparray">
+        <item>Set Up</item>
+    <item>
+        Shuffle role cards and distribute one to each player. You can never show your role card to
+        another player. Each player begins with 1000 Health Points (HP) \n\n
+
+        For 4 Players: Assassin, Queen, King, and Jack \n
+        For 5 Players: 2 Assassins. Queen, King, and Jack \n
+        For 6 Players: 3 Assassins. Queen, King, and Jack \n\n
+
+        Every Player begins with 5 cards and no one can attack with their weapon on their first turn
+    </item>
+    <item>
+        Draw one card at the start of each turn. A player can choose to play an ability card, replace
+        any weapons and armors, donate cards to any other player, or declare an attack. Attacking is done
+        last in a turn. No one can attack on their first turn. At the end of a player’s turn, they can be
+        holding no more than 7 cards. Any extra cards must be donated or discarded.
+    </item>
+        <item>
+        Only one weapon and one armor may be equipped at a time. A player’s weapon and armor can be
+        replaced at the end of any player’s turn, after they attack, or on their own turn. If a
+        weapon or armor is already equipped but the player wants to equip a new one, the player may
+        discard the weapon or armor and play another one from their hand. A weapon can only be used
+        to attack 3 times. If the attack is stopped, it does not count as an attack for the weapon.
+        Tier 1, 2, and 3 weapons deal 100, 200, and 300 damage respectively. Armor takes damage from
+        a weapon instead of it being taken from a player’s HP. Tier 1, 2, and 3 armors have 100, 200,
+        and 300 health. An armor’s health is different from a player’s HP. When an armor loses all of
+        its health, the armor is destroyed and the remaining damage is dealt to the player’s HP. For
+        example, if a tier 3 armor gets hit by a tier 1 weapon, then that armor takes the 100 damage
+        and now has 200 health left to protect the player. If a tier 3 weapon hits a tier 1 armor,
+        the armor is destroyed and the player takes 200 damage to their HP. If a weapon attacks a
+        player with equal tiers, then the armor is destroyed and no damage is taken.
+    </item>
+        <item>Ability (Red) Cards</item>
+        <item>
+            Ability cards can only be played on the player’s turn. A player can only play one ability
+            card per turn unless specified otherwise.
+        </item>
+        <item>Effect (Green) Cards </item>
+        <item>
+            Effect cards can be played on any turn, usually when a person is being attacked or targeted.
+        </item>
+        <item>Enchantment (Purple) Cards</item>
+        <item>
+            Purple cards are enchantments on weapons and armors. They can only be played on the
+            player’s turn. Multiple can be played in one turn and multiple can be applied to the
+            same weapon or armor. The enchantment card is discarded when the weapon or armor is
+            destroyed. If a card’s possession changes, the enchantments move with it.
+        </item>
+        <item>The "Field"</item>
+        <item>
+            The “field” encompasses all the cards on the table. There is a draw pile, a discard pile,
+            and each player’s own section of the field. In a player’s section, they should have their
+            role card face down and their HP visible if asked for. If a card is played that targets a
+            player, it is placed on their side of the field. For example, if Player A plays Bound on
+            Player B, it is kept on Player B’s field until the effect is over.
+        </item>
+        <item>Deaths</item>
+        <item>
+            When a player dies, they discard their hand and cannot disclose any information on
+            their roles or any other players’. The dead player must look at every person’s role and
+            determine if the game is over or if they must continue playing. The player who does the
+            killing gains 200 HP (cannot go above 1000 HP) and draws 2 cards. If multiple players’
+            cards are responsible for the death, then no players collect the reward.
+        </item>
+        <item>How to win</item>
+        <item>
+            Assassin: The assassins win by killing the King, Queen, and Jack.\n\n
+            King: The King wins by surviving with the Queen. If the Queen dies, the King cannot win,
+            but may still be the last player to survive.\n\n
+            Queen: The Queen wins by surviving with the King or the Jack (only if the King is dead).\n\n
+            Jack: The Jack wins by surviving with the Queen, but must kill the King. If the Queen dies,
+            the Jack cannot win, but may be the last player to survive.\n\n
+            The game ends when there is only one person alive, only Assassins alive, or when the Queen
+            survives with the King or Jack.
+        </item>
+    </string-array>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Basic Damage"
+        android:id="@+id/basicClick" />
+    <item android:title="Fire"
+        android:id="@+id/fireClick" />
+    <item android:title="Poison"
+        android:id="@+id/PoisonClick" />
+    <item android:title="Custom"
+        android:id="@+id/CustomClick" />
+</menu>
