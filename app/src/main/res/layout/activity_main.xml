@@ -34,7 +34,6 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonPlay"
         android:layout_alignStart="@+id/buttonPlay"
         android:layout_below="@+id/buttonHow"
         android:layout_marginTop="30dp"
@@ -42,34 +41,34 @@
         android:text="About"
         android:textAllCaps="false"
         android:textColor="@android:color/black"
-        android:textSize="25sp" />
+        android:textSize="40sp" />
 
     <Button
-        android:text="Play"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/buttonPlay"
-        android:layout_marginTop="94dp"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:backgroundTint="@android:color/background_dark"
-        android:textColor="@android:color/black"
-        android:textSize="25sp"
-        android:textAllCaps="false"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="How to Play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="94dp"
+        android:backgroundTint="@android:color/background_dark"
+        android:text="Play"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="40sp" />
+
+    <Button
         android:id="@+id/buttonHow"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:backgroundTint="@android:color/background_dark"
-        android:textColor="@android:color/black"
-        android:textSize="25sp"
-        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/buttonPlay"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:backgroundTint="@android:color/background_dark"
+        android:text="How to Play"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="40sp" />
 
 </RelativeLayout>

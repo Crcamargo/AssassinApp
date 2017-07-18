@@ -1,12 +1,11 @@
 package com.thunderfridge.phd.assassin.UI;
 
-
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
-import android.preference.PreferenceManager;
+
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,7 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.NumberPicker;
+
 import android.widget.PopupMenu;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -25,10 +24,8 @@ import android.widget.Toast;
 
 import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetSequence;
-import com.getkeepsafe.taptargetview.TapTargetView;
 import com.thunderfridge.phd.assassin.R;
 
-import static android.R.color.black;
 import static android.R.color.white;
 
 /*
@@ -38,14 +35,15 @@ public class playActivity extends AppCompatActivity {
 
     /** Member Variables **/
     public Button attackBut, takeDamBut;
-    public ImageButton helpBut;
-    public TextView healthText, armorText, attackDamageText, aCountText, direct;
+    public ImageButton helpBut, undoBut;
+    public TextView healthText, armorText, attackDamageText, aCountText;
     public Switch td;
-    public NumberPicker damageScroll;
     int health = 1000;
     int armor = 0;
     int attackDamage = 0;
     int count = 0;
+    int undoHealth = 1000;
+    int undoArmor = 0;
     Context context;
     CharSequence text;
     int duration = Toast.LENGTH_SHORT;
@@ -53,6 +51,9 @@ public class playActivity extends AppCompatActivity {
     View myView;
 
 
+    /*
+     * OnCreate method for Play activity, everything initialized in play()
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,22 +62,27 @@ public class playActivity extends AppCompatActivity {
         play();
     }
 
+    /*
+     * Play method
+     */
     public void play() {
+
         /*
-          Initialize Buttons Variables
+         * Initialize Buttons and text views
          */
-        attackBut = (Button) findViewById(R.id.buttonAttack);
-        takeDamBut = (Button) findViewById(R.id.TakeDamage);
-        helpBut = (ImageButton) findViewById(R.id.helpBut);
-        healthText = (TextView) findViewById(R.id.Health);
-        armorText = (TextView) findViewById(R.id.Shield);
-        attackDamageText = (TextView) findViewById(R.id.AttackDamage);
-        aCountText = (TextView) findViewById(R.id.Count);
-        direct = (TextView) findViewById(R.id.switch1);
+        attackBut        = (Button)      findViewById(R.id.buttonAttack);
+        takeDamBut       = (Button)      findViewById(R.id.TakeDamage);
+        helpBut          = (ImageButton) findViewById(R.id.helpBut);
+        undoBut          = (ImageButton) findViewById(R.id.undo);
+        healthText       = (TextView)    findViewById(R.id.Health);
+        armorText        = (TextView)    findViewById(R.id.Shield);
+        attackDamageText = (TextView)    findViewById(R.id.AttackDamage);
+        aCountText       = (TextView)    findViewById(R.id.Count);
+        td               = (Switch)      findViewById(R.id.switch1);
+
         context = getApplicationContext();
-        duration = Toast.LENGTH_SHORT;
-        td = (Switch) findViewById(R.id.switch1);
-        damageScroll = (NumberPicker) findViewById(R.id.numberPicker2);
+
+        /* Set font to blackcherry */
         Typeface customFont = Typeface.createFromAsset(getAssets(), "font/blackcherry.ttf");
         attackBut.setTypeface(customFont);
         takeDamBut.setTypeface(customFont);
@@ -84,19 +90,6 @@ public class playActivity extends AppCompatActivity {
         armorText.setTypeface(customFont);
         attackDamageText.setTypeface(customFont);
         aCountText.setTypeface(customFont);
-        direct.setTypeface(customFont);
-
-       damageScroll.setMinValue(0);
-        damageScroll.setMaxValue(1000);
-
-        NumberPicker.Formatter formatter = new NumberPicker.Formatter() {
-            @Override
-            public String format(int value) {
-                int temp = value * 10;
-                return "" + temp;
-            }
-        };
-        damageScroll.setFormatter(formatter);
 
 
         /*
@@ -108,7 +101,7 @@ public class playActivity extends AppCompatActivity {
             tutorial();
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean("firstRun", false);
-            editor.commit();
+            editor.apply();
         }
 
         /*
@@ -118,6 +111,19 @@ public class playActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 tutorial();
+            }
+        });
+
+        /*
+            Undo button
+         */
+        undoBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                healthText.setText(Integer.toString(undoHealth));
+                armorText.setText(Integer.toString(undoArmor));
+                armor = undoArmor;
+                health = undoHealth;
             }
         });
 
@@ -148,11 +154,12 @@ public class playActivity extends AppCompatActivity {
                                 armorText.setText("300");
                                 break;
                         }
-                        return false;
+                        return true;
                     }
                 });
             }
         });
+
         /*
             Tap attckDamgeText action
          */
@@ -171,27 +178,28 @@ public class playActivity extends AppCompatActivity {
                                 attackDamage = 100;
                                 attackDamageText.setText("100");
                                 count = 3;
-                                aCountText.setText(String.valueOf(count));
+                                aCountText.setText("3");
                                 break;
                             case R.id.tier2weapon:
                                 attackDamage = 200;
                                 attackDamageText.setText("200");
                                 count = 3;
-                                aCountText.setText(String.valueOf(count));
+                                aCountText.setText("3");
                                 break;
                             case R.id.tier3weapon:
                                 attackDamage = 300;
                                 attackDamageText.setText("300");
                                 count = 3;
-                                aCountText.setText(String.valueOf(count));
+                                aCountText.setText("3");
                                 break;
                         }
-                        return false;
+                        return true;
                     }
                 });
 
             }
         });
+
         /*
             Tap health action
          */
@@ -208,18 +216,23 @@ public class playActivity extends AppCompatActivity {
                         switch(selectedItemID){
                             case R.id.threehundredheal:
                                 health += 300;
+                                if(health > 1000)
+                                    health = 1000;
                                 healthText.setText(String.valueOf(health));
                                 break;
                             case R.id.twohundredheal:
                                 health += 200;
+                                if(health > 1000)
+                                    health = 1000;
                                 healthText.setText(String.valueOf(health));
                                 break;
                         }
-                        return false;
+                        return true;
                     }
                 });
             }
         });
+
         /*
             Attack! Button Action
          */
@@ -240,6 +253,7 @@ public class playActivity extends AppCompatActivity {
                 }
             }
         });
+
         /*
             Take Damage Button Action
          */
@@ -256,9 +270,7 @@ public class playActivity extends AppCompatActivity {
                         PopupMenu basicMenu;
                         int selectedItemID = item.getItemId();
                         switch(selectedItemID){
-                            /*
-                                If Basic Attack
-                             */
+                            /* If Basic Attack */
                             case R.id.basicClick:
                                 basicMenu = new PopupMenu(getApplicationContext(), myView);
                                 basicMenu.inflate(R.menu.basicdamage);
@@ -282,9 +294,7 @@ public class playActivity extends AppCompatActivity {
                                     }
                                 });
                                 break;
-                            /*
-                                if Fire attack
-                             */
+                            /* If Fire attack */
                             case R.id.fireClick:
                                 basicMenu = new PopupMenu(getApplicationContext(), myView);
                                 basicMenu.inflate(R.menu.firedamage);
@@ -308,9 +318,7 @@ public class playActivity extends AppCompatActivity {
                                     }
                                 });
                                 break;
-                            /*
-                                if poison attack
-                             */
+                            /* if poison attack */
                             case R.id.PoisonClick:
                                 basicMenu = new PopupMenu(getApplicationContext(), myView);
                                 basicMenu.inflate(R.menu.poisondamage);
@@ -334,9 +342,7 @@ public class playActivity extends AppCompatActivity {
                                     }
                                 });
                                 break;
-                            /*
-                                if Custom damage
-                             */
+                            /* if Custom damage */
                             case R.id.CustomClick:
                                 AlertDialog.Builder alertBuilder = new AlertDialog.Builder(playActivity.this);
                                 final EditText enterCustomText = new EditText(playActivity.this);
@@ -368,18 +374,22 @@ public class playActivity extends AppCompatActivity {
             }
         });
     }
+
     /*
-        Helper method for all the times we have to apply damage
-        direct = true if damage is dealt to health directly
-        direct = false if armor first
+        Method for taking damage
+        direct = true  if damage is dealt to health directly
+        direct = false if damage is applied to armor first, then health
      */
     public void takeDamage(int amount, boolean direct){
-
-        if(direct){
+        if(direct && health > 0){
+            undoHealth = health;
+            undoArmor = armor;
             health -= amount;
             healthText.setText(String.valueOf(health));
         }
-        else{
+        else if( health > 0){
+            undoHealth = health;
+            undoArmor = armor;
             armor -= amount;
             if(armor > 0){
                 armorText.setText(String.valueOf(armor));
@@ -422,6 +432,9 @@ public class playActivity extends AppCompatActivity {
                                 .cancelable(false)
                                 .textColor(white)
                                 .targetRadius(100),
+                        TapTarget.forView(findViewById(R.id.undo), "Undo", getString(R.string.undoTut))
+                                .cancelable(false)
+                                .textColor(white),
                         TapTarget.forView(findViewById(R.id.helpBut), "Help Button", getString(R.string.healpTut))
                                 .cancelable(false)
                                 .textColor(white));

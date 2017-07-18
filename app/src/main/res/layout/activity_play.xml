@@ -16,26 +16,24 @@
         android:id="@+id/Health"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="106dp"
         android:text="1000"
         android:textColor="@android:color/holo_green_dark"
-        android:textSize="84sp" />
+        android:textSize="84sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/AttackDamage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Health"
-        android:layout_alignBottom="@+id/Health"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="14dp"
         android:text="0"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="62sp" />
+        android:textSize="62sp"
+        android:layout_alignBaseline="@+id/Health"
+        android:layout_alignBottom="@+id/Health"
+        android:layout_toLeftOf="@+id/Count"
+        android:layout_toStartOf="@+id/Count" />
 
     <TextView
         android:id="@+id/Shield"
@@ -62,46 +60,72 @@
         android:text="0"
         android:textSize="28sp" />
 
-    <Button
-        android:id="@+id/buttonAttack"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/Health"
-        android:layout_alignLeft="@+id/Health"
-        android:layout_alignRight="@+id/Health"
-        android:layout_alignStart="@+id/Health"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:layout_below="@+id/Health"
-        android:layout_marginTop="30dp"
-        android:text="Attack!"
-        android:textAllCaps="false"
-        android:textColor="@android:color/black"
-        android:textSize="28sp" />
+        android:layout_alignParentStart="true"
+        >
 
-    <Button
-        android:id="@+id/TakeDamage"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        <Button
+            android:id="@+id/buttonAttack"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Health"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_weight="1"
+            android:text="Attack!"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/TakeDamage"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/switch1"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="11dp"
+            android:layout_weight="1"
+            android:text="Take Damage"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="40sp" />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/helpBut"
+            android:layout_alignEnd="@+id/Health"
+            android:layout_marginEnd="37dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:ems="6"
+            android:splitTrack="false"
+            android:text="Direct"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            tools:checked="false" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/undo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonAttack"
-        android:layout_alignStart="@+id/buttonAttack"
-        android:layout_below="@+id/buttonAttack"
-        android:layout_marginTop="27dp"
-        android:text="Take Damage"
-        android:textAllCaps="false"
-        android:textColor="@android:color/black"
-        android:textSize="28sp" />
-
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/TakeDamage"
-        android:layout_toLeftOf="@+id/TakeDamage"
-        android:layout_toStartOf="@+id/TakeDamage"
-        android:text="Direct"
-        android:textAlignment="center"
-        android:textColor="@android:color/black" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentLeft="true"
+        android:background="@color/helpbutton"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
     <ImageButton
         android:id="@+id/helpBut"
@@ -112,16 +136,6 @@
         android:layout_alignParentRight="true"
         android:background="@color/helpbutton"
         app:srcCompat="@android:drawable/ic_menu_help" />
-
-    <NumberPicker
-        android:id="@+id/numberPicker2"
-        android:layout_width="100dp"
-        android:layout_height="10dp"
-        android:layout_above="@+id/helpBut"
-        android:layout_below="@id/buttonAttack"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="36dp"
-        android:gravity="center" />
 
 
 </RelativeLayout>
