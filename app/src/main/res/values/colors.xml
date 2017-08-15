@@ -7,4 +7,8 @@
     <color name="helpbutton">#9a2f2f2f</color>
     <color name="red">#bf1616</color>
     <color name="clear">#00ffffff</color>
+    <color name="cardbg">#424242</color>
+    <color name="cardDiv">#9E9E9E</color>
+    <color name="cardDivDiv">#212121</color>
+    <color name="divGold">#ffd54f</color>
 </resources>
